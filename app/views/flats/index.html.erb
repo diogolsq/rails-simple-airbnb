@@ -1,0 +1,33 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= simple_form_for @flat do |f| %>
+          <%= f.input :name %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+
+
+        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="">
+        <%= link_to "Search", "#", class: "nav-link btn btn-outline-success my-2 my-sm-0" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Add Flat", "#", class: "nav-link btn btn-outline-primary my-2 my-sm-0 ml-2" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h1>All of our Flats</h1>
+<p><%= 'All #{@flats.count} flats'  %></p>
+
+
