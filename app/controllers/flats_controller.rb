@@ -4,6 +4,12 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
   def index
     @flats = Flat.all
+    if params[:search]
+      if params[:search][:query]
+        @flatresult = Flat.where(name: params[:search][:query])[0]
+        redirect_to flat_path(@flatresult)
+      end
+    end
   end
 
   def show
