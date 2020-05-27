@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="">
-        <%= link_to "Search", "#", class: "nav-link btn btn-outline-success my-2 my-sm-0" %>
+        <%= link_to "Search", "", class: "nav-link btn btn-outline-success my-2 my-sm-0" %>
       </li>
       <li class="nav-item">
         <%= link_to "Add Flat", new_flat_path, class: "nav-link btn btn-outline-primary my-2 my-sm-0 ml-2" %>
@@ -30,7 +30,8 @@
     <div class= "card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
       <div class="card-product-infos">
-        <h2><%= flat.name %></h2>
+        <h2><%= link_to flat.name, flat_path(flat), class: "btn btn-primary" %>
+</h2>
         <p><%= flat.address%> <strong><%= flat.description%></strong> <%= flat.price_per_night %> <%= flat.number_of_guests %></p>
       </div>
     </div>

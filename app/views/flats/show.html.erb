@@ -1,18 +1,10 @@
 <h1><%= @flat.name %></h1>
 
-<h2><%= @flat.category %></h2>
+<h2><%= @flat.address %></h2>
 
-<p><%= @flat.address %></p>
+<p><%= @flat.description %></p>
+<p><%= @flat.price_per_night %></p>
+<p><%= @flat.number_of_guests %></p>
 
-<p>Reviews for this flat</p>
-
-<ol>
-  <% @flat.reviews.each do |review|%>
-    <li><%= review.content %></li>
-    <%= review.rating %>
-  <% end %>
-</ol>
 
 <%= link_to 'Back to HomePage', flats_path %>
-<br>
-<%= link_to 'Add a review', new_flat_review_path(@flat) %>
